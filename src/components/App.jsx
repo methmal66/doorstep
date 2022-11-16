@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PreviewPage from "./PreviewPage";
+import PreviewPage from "./index/PreviewPage";
 
 export default function App() {
   return (
