@@ -35,13 +35,18 @@ const categories = [
   },
 ];
 
-export default function CategorySelection() {
+export default function CategorySelection(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       {categories.map((cat) => (
-        <Category key={cat.name} name={cat.name} subCats={cat.subCats} />
+        <Category
+          key={cat.name}
+          name={cat.name}
+          subCats={cat.subCats}
+          setSelectedCat={props.setSelectedCat}
+        />
       ))}
     </div>
   );

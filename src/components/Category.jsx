@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import SubCategory from "./SubCategory";
 
 const useStyles = createUseStyles({
   collapsible: {
@@ -32,7 +33,7 @@ export default function Category(props) {
       </button>
       <div className={isCollapsed ? classes.collapsed : classes.hidden}>
         {props.subCats.map((sub) => (
-          <button className={classes.sub}>{sub}</button>
+          <SubCategory text={sub} setSelectedCat={props.setSelectedCat} />
         ))}
       </div>
     </div>
