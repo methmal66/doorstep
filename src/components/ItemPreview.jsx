@@ -25,13 +25,16 @@ const useStyles = createUseStyles({
   price: {
     fontSize: "2rem",
   },
+  deliveryFee: {
+    fontSize: "0.85rem",
+  },
 });
 
 export default function ItemPreview(props) {
   const classes = useStyles();
 
   function formatPrice(price) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return "Rs. " + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   return (
@@ -39,8 +42,12 @@ export default function ItemPreview(props) {
       <img src={props.imageUrl} className={classes.image} />
       <div className={classes.details}>
         <div className={classes.title}>{props.title}</div>
-        <div className={classes.price}>{"Rs. " + formatPrice(props.price)}</div>
-        <div>{props.deliveryFee == 0 ? "Free delivery" : props.price}</div>
+        <div className={classes.price}>{formatPrice(props.price)}</div>
+        <div className={classes.deliveryFee}>
+          {props.deliveryFee == 0
+            ? "Free delivery"
+            : "Delivery " + formatPrice(props.deliveryFee)}
+        </div>
       </div>
     </div>
   );
