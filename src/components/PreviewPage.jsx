@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemPreviewList from "./ItemPreviewList";
+import CategorySelection from "./CategorySelection";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -12,10 +13,12 @@ const useStyles = createUseStyles({
 
 export default function PreviewPage() {
   const classes = useStyles();
+  const [selectedCat, setSelectedCat] = useState();
 
   return (
     <div className={classes.root}>
-      <ItemPreviewList />
+      <CategorySelection setSelectedCat={setSelectedCat} />
+      <ItemPreviewList cat={selectedCat} />
     </div>
   );
 }
