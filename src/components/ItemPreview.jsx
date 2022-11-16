@@ -8,6 +8,7 @@ const useStyles = createUseStyles({
     width: 1000,
     height: 300,
     border: "1px solid black",
+    marginBottom: 10,
   },
   image: {
     width: 300,
