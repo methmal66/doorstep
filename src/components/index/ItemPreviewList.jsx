@@ -22,6 +22,7 @@ export default function ItemPreviewList(props) {
         category="Mobile phone"
       />
       <div>Only items belongs to '{props.cat}' are displayed</div>
+      <div>Items are filtered as</div>
     </div>
   );
 }
