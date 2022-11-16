@@ -48,6 +48,7 @@ export default function ItemPreview(props) {
             ? "Free delivery"
             : "Delivery " + formatPrice(props.deliveryFee)}
         </div>
+        <div>{props.condition}</div>
       </div>
     </div>
   );
