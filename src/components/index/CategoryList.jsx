@@ -5,7 +5,6 @@ import Category from "./Category";
 const useStyles = createUseStyles({
   root: {
     width: 250,
-    height: 400,
     border: "1px solid black",
     display: "flex",
     flexDirection: "column",
@@ -14,6 +13,11 @@ const useStyles = createUseStyles({
   },
   title: {
     textAlign: "center",
+  },
+  reset: {
+    marginTop: 7,
+    marginBottom: 7,
+    width: 50,
   },
 });
 
@@ -42,6 +46,10 @@ const categories = [
 export default function CategoryList(props) {
   const classes = useStyles();
 
+  function resetCategory() {
+    props.setSelectedCat(null);
+  }
+
   return (
     <div className={classes.root}>
       <div className={classes.title}>Categories</div>
@@ -53,6 +61,12 @@ export default function CategoryList(props) {
           setSelectedCat={props.setSelectedCat}
         />
       ))}
+      <input
+        className={classes.reset}
+        type="reset"
+        value="Reset"
+        onClick={resetCategory}
+      />
     </div>
   );
 }
