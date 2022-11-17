@@ -45,7 +45,7 @@ export default function ItemPreview(props) {
         <div className={classes.title}>{props.title}</div>
         <div className={classes.price}>{formatPrice(props.price)}</div>
         <div className={classes.deliveryFee}>
-          {props.deliveryFee == 0
+          {props.deliveryFee === 0
             ? "Free delivery"
             : "Delivery " + formatPrice(props.deliveryFee)}
         </div>
