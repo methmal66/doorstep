@@ -3,11 +3,11 @@ import React from "react";
 export default function Filter(props) {
   return (
     <div>
-      <label htmlFor={props.filter}>{props.filter}</label>
+      <label htmlFor={props.children}>{props.children}</label>
       <input
-        id={props.filter}
+        id={props.children}
         name={props.legend}
-        value={props.filter}
+        value={props.children}
         type="radio"
       />
     </div>

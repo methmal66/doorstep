@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import Filter from "./Filter";
 
 export default function FilterGroup(props) {
-  const [value, setValue] = useState();
-
   function handleRadioChange(event) {
     props.setSelectedFilters((filters) => ({
       ...filters,
-      [props.legend]: event.target.value,
+      [props.children]: event.target.value,
     }));
   }
 
   return (
     <div onChange={handleRadioChange}>
       <fieldset>
-        <legend>{props.legend}</legend>
+        <legend>{props.children}</legend>
         {props.filters.map((filter) => (
-          <Filter key={filter} filter={filter} legend={props.legend} />
+          <Filter key={filter} legend={props.children}>
+            {filter}
+          </Filter>
         ))}
       </fieldset>
     </div>
