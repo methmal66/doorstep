@@ -5,7 +5,7 @@ export default function Sort(props) {
     <div>
       <label htmlFor={props.children}>{props.children}</label>
       <input
-        type="checkbox"
+        type="radio"
         name="sort"
         value={props.children}
         id={props.children}
