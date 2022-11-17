@@ -6,13 +6,13 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "row",
     width: 1000,
-    height: 300,
+    height: 250,
     border: "1px solid black",
     marginBottom: 10,
   },
   image: {
-    width: 300,
-    height: 300,
+    width: 250,
+    height: 250,
   },
   details: {
     width: 700,
