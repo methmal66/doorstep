@@ -3,6 +3,7 @@ import ItemPreviewList from "./ItemPreviewList";
 import CategoryList from "./CategoryList";
 import FilterGroupList from "./FilterGroupList";
 import { createUseStyles } from "react-jss";
+import SortList from "./SortList";
 
 const useStyles = createUseStyles({
   root: {
@@ -14,20 +15,29 @@ const useStyles = createUseStyles({
 
 export default function PreviewPage() {
   const classes = useStyles();
-  const [selectedCat, setSelectedCat] = useState();
+
+  const [selectedSorts, setSelectedSorts] = useState({
+    Price: false,
+    Date: false,
+  });
   const [selectedFilters, setSelectedFilters] = useState({
     Condition: null,
     Delivery: null,
   });
+  const [selectedCat, setSelectedCat] = useState(null);
+
+  useEffect(() => console.log(selectedSorts), [selectedSorts]);
   useEffect(() => console.log(selectedFilters), [selectedFilters]);
+  useEffect(() => console.log(selectedCat), [selectedCat]);
 
   return (
     <div className={classes.root}>
       <div>
-        <CategoryList setSelectedCat={setSelectedCat} />
+        <SortList setSelectedSorts={setSelectedSorts} />
         <FilterGroupList setSelectedFilters={setSelectedFilters} />
+        <CategoryList setSelectedCat={setSelectedCat} />
       </div>
-      <ItemPreviewList cat={selectedCat} filters={selectedFilters} />
+      <ItemPreviewList />
     </div>
   );
 }
